@@ -17,6 +17,36 @@
 </head>
 
 <body>
+    <header>
+        <div class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto" style="flex-direction: column;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Profile">Profile <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Knowledge">Knowledge</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
     <main>
         <div class="parallax">
             <div class="container">
@@ -32,7 +62,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="Profile">
             <div class="row justify-content-center">
                 <h1 style="color: #00a5a5;">
                     Profile
@@ -49,13 +79,13 @@
                     <center>
                         <h4 style="color: #00a5a5;">About Me</h4>
                     </center>
-                    <p>I am an allround web developer. I am a senior programmer with good knowledge of front-end
+                    <p>I am an allround programmer. I am most proffecient in gameplay programming with good knowledge of gameplay
                         techniques. I love structure and order and I also stand for quality. I love spending time on
-                        fixing little details and optimizing web apps. Also I like working in a team, you'll learn
+                        fixing little details and optimizing applications. Also I like working in a team, you'll learn
                         faster and much more. As the saying goes: 'two heads are better than one'.</p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="img/profile.png" alt="profile" width="256">
+                    <img src="img/profile.png" alt="profile" style="width: 100%;">
                 </div>
                 <div class="col-md-4 text-center">
                     <center>
@@ -74,7 +104,7 @@
             </div>
         </div>
 
-        <div class="exp">
+        <div class="exp" id="Education">
             <div class="container">
                 <div class="row justify-content-center">
                     <center>
@@ -124,7 +154,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="Knowledge">
             <div class="row justify-content-center" style="padding-left: 5%;padding-right: 5%;">
                 <h1 style="color: #00a5a5;">
                     Knowledge
@@ -554,7 +584,7 @@
             </div>
         </div>
 
-        <div class="exp">
+        <div class="exp" id="Projects">
             <div class="container">
                 <div class="row justify-content-center">
                     <h1 style="color: #00a5a5;">
@@ -566,11 +596,14 @@
                     <br> - Benjamin Franklin
                 </div>
                 <hr>
+                <div class="row">
+                    
+                </div>
             </div>
         </div>
     </main>
 
-    <footer style="background-color: #434242;color: white;">
+    <footer style="background-color: #434242;color: white;" id="Cotact">
         <div class="container" style="padding: 5%;">
             <div class="row justify-content-center">
                 <h1>Contact </h1>
@@ -594,13 +627,52 @@
                 </div>
                 <div class="col-md-4 lk">
                     <a href="mailto:tidum.nagori@gmail.com"></a>
-                        <i class="fas fa-at"></i>
-                        Email </a>
+                    <i class="fas fa-at"></i>
+                    Email </a>
                 </div>
             </div>
         </div>
 
     </footer>
+    <script>
+        // handle links with @href started with '#' only
+        $(document).on('click', 'a[href^="#"]', function (e) {
+            // target element id
+            var id = $(this).attr('href');
+
+            // target element
+            var $id = $(id);
+            if ($id.length === 0) {
+                return;
+            }
+
+            // prevent standard hash navigation (avoid blinking in IE)
+            e.preventDefault();
+
+            // top position relative to the document
+            var pos = $id.offset().top;
+
+            // animated top scrolling
+            $('body, html').animate({ scrollTop: pos });
+        });
+
+        $(document).ready(function () {
+            $('.navigation').css('left', $(window).width() - $('.navigation').width() - 10)
+        });
+
+        $(window).resize(function () {
+            if ($(window).width() > 768){
+                $('.navigation').css('width', 'auto')
+                $('.navigation').css('left', $(window).width() - $('.navigation').width())
+                $('.navigation').css('top', '25%')
+            }
+            else {
+                $('.navigation').css('width', $(window).width())
+                $('.navigation').css('top', 0)
+                $('.navigation').css('left', 0)
+            }
+        });
+    </script>
 </body>
 
 </html>

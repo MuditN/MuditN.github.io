@@ -62,3 +62,9 @@
     text-decoration: none;
     color: white;
 }
+
+.navigation{
+    position: fixed;
+    z-index: 99;
+    top: 25%;
+}
