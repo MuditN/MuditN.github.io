@@ -1,0 +1,64 @@
+.body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "muli";
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../img/UPDN.png");
+  
+    /* Set a specific height */
+    min-height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container{
+      padding: 5%;
+  }
+
+  .title{
+      color: white;
+      font-size: 36px;
+      font-weight: 900;
+      padding-top: 25%;
+  }
+
+  .email a{
+      text-decoration: none;
+      color: black;
+  }
+
+  .email a:hover{
+      color: #5f5f5f;
+  }
+
+  .exp{
+      background-color: #f3efe0;
+  }
+
+  .ability-title {
+    display: inline-block;
+    width: 60%;
+}
+
+  .ability-score {
+    float: right;
+}
+
+.lk {
+    font-size: xx-large;
+    text-decoration: none;
+    color: white;
+}
+
+.lk a{
+    font-size: xx-large;
+    text-decoration: none;
+    color: white;
+}
